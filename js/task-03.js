@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryRef = document.querySelector('#gallery');
+
+const createGallery = images.forEach(image => {
+  galleryRef.style.display = 'flex';
+  galleryRef.style.marginLeft = '-20px';
+  galleryRef.style.listStyle = 'none';
+  galleryRef.insertAdjacentHTML(
+    'afterbegin',
+    `<li style="margin-right: 20px"><img src="${image.url}" width="300px" height="270px" alt="${image.alt}" /></li>`,
+  );
+});
